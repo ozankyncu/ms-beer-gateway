@@ -20,10 +20,10 @@ public class GoogleConfig {
     @Bean
     public RouteLocator googleRouteConfig(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route(r -> r.path("/googlesearch2")
+                .route("google", r -> r.path("/googlesearch2")
                         .filters(f -> f.rewritePath("/googlesearch2(?<segment>/?.*)", "/${segment}"))
                         .uri("https://google.com")
-                        .id("google"))
+                )
                 .build();
     }
 }
