@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Profile;
 public class LoadBalancedRoutesConfiguration {
 
     @Bean
-    public RouteLocator localBalancedRoutes(RouteLocatorBuilder builder) {
+    public RouteLocator loadBalancedRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("beer-service", r -> r.path("/api/v1/beer*", "/api/v1/beer/*",
                                 "/api/v1/beerUpc/*")
